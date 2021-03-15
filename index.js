@@ -1,12 +1,13 @@
 const express = require("express");
 const app = express();
+const tshirts = require("./components/tshirts");
 
 app.use(express.json());
 
 
 const PORT = 8080;
 
-
+app.use('/t', tshirts);
 app.get('/tshirt', (req, res) => {
     res.status(200).send({
         tshirt: "Red",
