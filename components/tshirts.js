@@ -28,10 +28,12 @@ const colors = {
 
 function valueByObjId(){
     let retriever = [];
-    
-    for(let i = 1;i<=10;i++){
- 
-    }
+    let {one,two,three} = colors;
+    let a = Object.values(one);
+    let b = Object.values(two);
+    let c = Object.values();
+    retriever.concat(c)
+    console.log(retriever);
 
 }
 
@@ -39,7 +41,7 @@ function valueByObjId(){
 
 
 tshirtRoute.get("/color", (req,res,next) =>{
-    res.status(200).json({"choose color no. " :{colors}});
+    res.status(200).json(valueByObjId());
 })
 
 tshirtRoute.get("/colorsPickbyid", (req,res)=>{
