@@ -31,9 +31,9 @@ function valueByObjId(){
     let {one,two,three} = colors;
     let a = Object.values(one);
     let b = Object.values(two);
-    let c = Object.values();
-    retriever.concat(c)
-    console.log(retriever);
+    let c = Object.values(three);
+    let result = retriever.concat(a).concat(b).concat(c)
+    
 
 }
 
