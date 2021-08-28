@@ -2,14 +2,14 @@
   "name": "restful-api",
   "version": "1.0.0",
   "description": "",
+  "author": "Satish Rajnale",
   "main": "index.js",
   "dependencies": {
     "express": "^4.17.1",
     "get-port": "^5.1.1",
-    "nodemon": "^2.0.7",
+    "nodemon": "^2.0.12",
     "open": "^8.2.1"
   },
-  "devDependencies": {},
   "scripts": {
     "start": "nodemon index.js",
     "authstart": "nodemon authUser.js"
@@ -18,7 +18,6 @@
     "type": "git",
     "url": "git+https://github.com/satish-rajnale/Restful-Api.git"
   },
-  "author": "satish",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/satish-rajnale/Restful-Api/issues"
