@@ -4,27 +4,37 @@ const tshirts = require("./components/tshirts");
 
 app.use(express.json());
 
-
 const PORT = 8080;
 
-app.use('/t', tshirts);
-app.get('/tshirt', (req, res) => {
-    res.status(200).send({
-        tshirt: "Red",
-        size: "large"
-    })
-})
+app.use("/t", tshirts);
+app.get("/tshirt", (req, res) => {
+  res.status(200).send([
+    {
+      tshirt: "Red",
+      size: "large",
+      body: "XL",
+      price: "2568",
+    },
+    {
+        tshirt: "Black",
+        size: "sm",
+        body: "l",
+        price: "256",
+      }
+  ]);
+});
 
 app.post("/tshirt/:id", (req, res) => {
-    const id = req.params.id;
-    const { logo } = req.body;
+  const id = req.params.id;
+  const { logo } = req.body;
 
-    if (!logo) { res.status(418).send({ message: "Need a logo here" }) };
+  if (!logo) {
+    res.status(418).send({ message: "Need a logo here" });
+  }
 
-    res.send({
-        tshirt: `For id ${id} logo sent is ${logo}`
-    })
-})
-
+  res.send({
+    tshirt: `For id ${id} logo sent is ${logo}`,
+  });
+});
 
 app.listen(PORT, () => console.log(`live on port ${PORT}`));
