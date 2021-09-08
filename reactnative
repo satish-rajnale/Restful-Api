@@ -1,0 +1,28 @@
+ {/* <Text style={styles.text}>Get Data: </Text>
+              {typeof data == 'string' ? (
+                <Text style={{color: '#ffffff'}}>{data}</Text>
+              ) : (
+                data.map((item, index) => (
+                  <Text key={index} style={{color: '#ffffff'}}>
+                    {item.key} : {item.val}
+                  </Text>
+                ))
+              )} */}
+              {/* <Text style={styles.text}>Post Data: </Text> */}
+
+              // if (selectedValue == 'GET') {
+    //   try {
+    //     await axios(apiurl)
+    //       .then(response => response.data)
+    //       .then(json => {
+    //         console.log(json);
+    //         setGetData(json);
+    //       })
+    //       .catch(function (error) {
+    //         setGetData(String(error));
+    //         console.log('axios error => ', error);
+    //       });
+    //   } catch (err) {
+    //     setGetData(String(err));
+    //   }
+    // } else if (selectedValue == 'POST') {

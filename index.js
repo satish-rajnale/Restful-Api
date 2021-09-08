@@ -8,33 +8,33 @@ const PORT = 8080;
 
 app.use("/t", tshirts);
 app.get("/tshirt", (req, res) => {
-  res.status(200).send([
-    {
-      tshirt: "Red",
-      size: "large",
-      body: "XL",
-      price: "2568",
-    },
-    {
-        tshirt: "Black",
-        size: "sm",
-        body: "l",
-        price: "256",
-      }
-  ]);
+  var obj ={
+    "title": "The Basics - Networking",
+    "description": "Your app fetched this from a remote endpoint!",
+    "movies": [
+      { "id": "1", "title": "Star Wars", "releaseYear": "1977" },
+      { "id": "2", "title": "Back to the Future", "releaseYear": "1985" },
+      { "id": "3", "title": "The Matrix", "releaseYear": "1999" },
+      { "id": "4", "title": "Inception", "releaseYear": "2010" },
+      { "id": "5", "title": "Interstellar", "releaseYear": "2014" }
+    ]
+  }
+  res.status(200).send(obj);
 });
 
 app.post("/tshirt/:id", (req, res) => {
   const id = req.params.id;
-  const { logo } = req.body;
+  const {reqKey, reqVal} = req.body;
 
-  if (!logo) {
-    res.status(418).send({ message: "Need a logo here" });
-  }
-
-  res.send({
-    tshirt: `For id ${id} logo sent is ${logo}`,
-  });
+  // if (!key) {
+  //   res.status(418).send({ message: "Need a logo here" });
+  // }
+  var data = [
+    {key: reqKey, val: reqVal},
+    {key: reqKey, val: reqVal}
+  ]
+  res.send(data);
 });
 
-app.listen(PORT, () => console.log(`live on port ${PORT}`));
+app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
+   n 
