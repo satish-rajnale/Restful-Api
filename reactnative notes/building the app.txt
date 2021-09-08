@@ -1,0 +1,31 @@
+follow this page : https://www.instamobile.io/android-development/generate-react-native-release-build-android/
+
+
+//inside build.gradle for small versions of app set 
+def enableProguardInReleaseBuilds = true
+def enableSeparateBuildPerCPUArchitecture = true
+
+
+//for http request enabled
+Add the codes in your main AndroidManifest.xml :
+
+<manifest 
+  xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+      android:usesCleartextTraffic="true" tools:targetApi="28"> 
+    ... 
+    </application>
+</manifest>
+
+
+
+//build your app 
+gradlew assembleRelease  
+
+if build fails and if you had any previous build in your app/build/outputs/apk delete them
+
+
+
