@@ -25,10 +25,6 @@ app.get("/tshirt", (req, res) => {
 app.post("/tshirt/:id", (req, res) => {
   const id = req.params.id;
   const {reqKey, reqVal} = req.body;
-
-  // if (!key) {
-  //   res.status(418).send({ message: "Need a logo here" });
-  // }
   var data = [
     {key: reqKey, val: reqVal},
     {key: reqKey, val: reqVal}
@@ -37,4 +33,3 @@ app.post("/tshirt/:id", (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
-   n 
