@@ -22,14 +22,15 @@ app.get("/tshirt", (req, res) => {
   res.status(200).send(obj);
 });
 
+const localStore = [];
+
 app.post("/tshirt/:id", (req, res) => {
   const id = req.params.id;
   const {reqKey, reqVal} = req.body;
-  var data = [
-    {key: reqKey, val: reqVal},
-    {key: reqKey, val: reqVal}
-  ]
-  res.send(data);
+  var data =  {key: reqKey, val: reqVal};
+  localStore.push(data)
+  console.log(localStore)
+  res.send(localStore);
 });
 
 app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
