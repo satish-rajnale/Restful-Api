@@ -5,7 +5,7 @@ follow this page : https://www.instamobile.io/android-development/generate-react
 def enableProguardInReleaseBuilds = true
 def enableSeparateBuildPerCPUArchitecture = true
 
-
+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
 //for http request enabled
 Add the codes in your main AndroidManifest.xml :
 
