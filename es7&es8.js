@@ -22,6 +22,7 @@ console.log(2 ** 3); // 8  similar to Math.pow(2, 3)
 
 const obj1 = { a: 1 };
 const obj2 = { a: 1 };
+console.log(obj1.equals(obj2));
 // console.log(Object.is(obj1, obj1)); //true
 // console.log(Object.is(obj1, obj2)); //false
 // console.log({ ...obj1 }); //{a:1}
@@ -75,3 +76,14 @@ handler.get = function (target, prop, receiver) {
   return Reflect.get(...arguments); // try returning {...arguments } here
 };
 console.log(proxy1.msg1, proxy1.msg2); //hi world
+
+const p1 = new Promise((resolve) => resolve(44));
+const p2 = new Promise((resolve) => setTimeout(() => resolve('HI'), 3000));
+Promise.all([p1, p2]).then((res) => console.log(res)); //[44,"HI"]
+const p3 = new Promise((resolve, reject) => reject('error'));
+//promise.all or allsettled waits for all promise to resolve/reject
+Promise.all([p1, p2, p3])
+  // no value printed
+  .catch((err) => console.log(err))
+  .then((res) => console.log(res)); // error
+Promise.allSettled([p1, p2, p3]).then((res) => console.log(res));
